@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 500px;
+            height: 500px;
+            background-color: #AAA;
+            position: relative;
+        }
+        .mouse {
+            width: 20px;
+            height: 40px;
+            border-radius: 20px;
+            border: 2px solid white;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: mouse-down 4s infinite  ;
+        }
+
+        .wheel {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: white;
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: wheeling 4s infinite;
+        }
+
+        @keyframes mouse-down {
+            from{
+                top: 70%;
+            }
+            25%{
+                top: 75%;
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+
+            to{
+                top: 75%;
+                opacity: 0;
+            }
+
+            
+        }
+
+        @keyframes wheeling {
+            from {
+                top: 20%;
+            }
+            25% {
+                top: 50%;
+            }
+
+            to {
+                top: 50%;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</div>
+        <div class="mouse">
+            <div class="wheel"></div>
+        </div>
+    </div>
+</body>
+</html>
