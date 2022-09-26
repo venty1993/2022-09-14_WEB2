@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        }
+
+
+        #wrapper{
+            /* width: 100%; 기본값 그대로 둬야함!*/
+            padding: 0 32px;
+        }
+
+        header {
+            background-color: aquamarine;
+            height: 120px;
+        }
+
+        main {
+            display: flex;
+            gap: 1.5em;
+            font-size: 2rem;
+        }
+
+        aside {
+            width: 30%;
+            background-color: antiquewhite;
+            font-size: 1rem;
+        }
+
+        section {
+            width: 70%;
+            background-color: darksalmon;
+        }
+        footer {
+            background-color: gray;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>가변 그리드 만들어보기</header>
+        <main>
+            <aside>aside</aside>
+            <section>section</section>
+        </main>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>
