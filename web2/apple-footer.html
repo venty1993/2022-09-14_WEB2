@@ -44,15 +44,63 @@
             }
             .footer-nav-contents {
                 border-top: 1px solid gray;
-                margin: 8px 0;
-                padding-top: 8px;
+                padding: 8px 0;
+                overflow: hidden;
+                background-color: white;
             }
 
+            nav label {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+            }
+
+            .plus-icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 10px;
+                height: 10px;
+                flex-shrink: 0;
+                transition: 0.2s;
+            }
+            .plus-icon::after,.plus-icon::before {
+                display: block;
+                content: '';
+                background-color: black;
+                height: 10px;
+                width: 2px;
+                transition: 0.5s;
+                flex-shrink: 0;
+                position: absolute;
+                
+            }
+            
+            .plus-icon::before {
+                transform: rotate(90deg);
+
+            }
             nav ul {
-                display: none;
+                position: absolute;
+                transform: translateY(-100%);
+                z-index: -1;
+
             }
             .dropdown-menu-check:checked ~ ul {
-                display: block;
+                z-index: 0;
+                position: relative;
+                transform: none;
+                transition: 0.2s;
+            }
+
+            .dropdown-menu-check:checked + label >.plus-icon{
+                transform: rotate(45deg);
+            }
+
+            nav li > a {
+                color: #232323;
+                text-decoration: none;
             }
         }
     </style>
@@ -64,17 +112,18 @@
                 <input type="checkbox" class="dropdown-menu-check" id="shopping-and-more1">
                 <label for="shopping-and-more1">
                     <h3>쇼핑 및 알아보기</h3>
+                    <div class="plus-icon"></div>
                 </label>
                 <ul>
-                    <li>스토어</li>
-                    <li>Mac</li>
-                    <li>iPad</li>
-                    <li>iPhone</li>
-                    <li>Watch</li>
-                    <li>AirPods</li>
-                    <li>TV 및 홈</li>
-                    <li>AirTag</li>
-                    <li>액세서리</li>
+                    <li><a href="#">스토어</a></li>
+                    <li><a href="#">Mac</a></li>
+                    <li><a href="#">iPad</a></li>
+                    <li><a href="#">iPhone</a></li>
+                    <li><a href="#">Watch</a></li>
+                    <li><a href="#">AirPods</a></li>
+                    <li><a href="#">TV 및 홈</a></li>
+                    <li><a href="#">AirTag</a></li>
+                    <li><a href="#">액세서리</a></li>
                 </ul>
             </div>
         </div>
@@ -83,26 +132,28 @@
                 <input type="checkbox" class="dropdown-menu-check" id="shopping-and-more2">
                 <label for="shopping-and-more2">
                     <h3>서비스</h3>
+                    <div class="plus-icon"></div>
                 </label>
                 <ul>
-                    <li>Apple Music</li>
-                    <li>Apple TV+</li>
-                    <li>Apple Arcade</li>
-                    <li>iCloud</li>
-                    <li>Apple Books</li>
-                    <li>Apple Podcast</li>
-                    <li>App Store</li>
+                    <li><a href="#">Apple Music</a></li>
+                    <li><a href="#">Apple TV+</a></li>
+                    <li><a href="#">Apple Arcade</a></li>
+                    <li><a href="#">iCloud</a></li>
+                    <li><a href="#">Apple Books</a></li>
+                    <li><a href="#">Apple Podcast</a></li>
+                    <li><a href="#">App Store</a></li>
                 </ul>
             </div>
             <div class="footer-nav-contents">
                 <input type="checkbox" class="dropdown-menu-check" id="shopping-and-more3">
                 <label for="shopping-and-more3">
                     <h3>계정</h3>
+                    <div class="plus-icon"></div>
                 </label>
                 <ul>
-                    <li>Apple ID 관리</li>
-                    <li>Apple Store 계정</li>
-                    <li>iCloud.com</li>
+                    <li><a href="#">Apple ID 관리</a></li>
+                    <li><a href="#">Apple Store 계정</a></li>
+                    <li><a href="#">iCloud.com</a></li>
                 </ul>
             </div>
         </div>
@@ -111,18 +162,19 @@
                 <input type="checkbox" class="dropdown-menu-check" id="shopping-and-more4">
                 <label for="shopping-and-more4">
                     <h3>Apple Store</h3>
+                    <div class="plus-icon"></div>
                 </label>
                 <ul>
-                    <li>매장 찾기</li>
-                    <li>Genius Bar</li>
-                    <li>Today at Apple</li>
-                    <li>Apple 캠프</li>
-                    <li>Apple Store 앱</li>
-                    <li>리퍼 및 특가 제품</li>
-                    <li>금융 혜택</li>
-                    <li>Apple Trade In</li>
-                    <li>주문 상태</li>
-                    <li>쇼핑 도움말</li>
+                    <li><a href="#">매장 찾기</a></li>
+                    <li><a href="#">Genius Bar</a></li>
+                    <li><a href="#">Today at Apple</a></li>
+                    <li><a href="#">Apple 캠프</a></li>
+                    <li><a href="#">Apple Store 앱</a></li>
+                    <li><a href="#">리퍼 및 특가 제품</a></li>
+                    <li><a href="#">금융 혜택</a></li>
+                    <li><a href="#">Apple Trade In</a></li>
+                    <li><a href="#">주문 상태</a></li>
+                    <li><a href="#">쇼핑 도움말</a></li>
                 </ul>
             </div>
         </div>
@@ -131,11 +183,12 @@
                 <input type="checkbox" class="dropdown-menu-check" id="shopping-and-more5">
                 <label for="shopping-and-more5">
                     <h3>비즈니스</h3>
+                    <div class="plus-icon"></div>
                 </label>
                 <ul>
                     
-                    <li>Apple과 비즈니스</li>
-                    <li>비즈니스를 위한 제품 쇼핑하기</li>
+                    <li><a href="#">Apple과 비즈니스</a></li>
+                    <li><a href="#">비즈니스를 위한 제품 쇼핑하기</a></li>
 
                 </ul>
             </div>
@@ -143,12 +196,13 @@
                 <input type="checkbox" class="dropdown-menu-check" id="shopping-and-more6">
                 <label for="shopping-and-more6">
                     <h3>교육</h3>
+                    <div class="plus-icon"></div>
                 </label>
                 <ul>
                     
-                    <li>Apple과 교육</li>
-                    <li>초중고용 제품 쇼핑하기</li>
-                    <li>대학 생활을 위한 제품 쇼핑하기</li>
+                    <li><a href="#">Apple과 교육</a></li>
+                    <li><a href="#">초중고용 제품 쇼핑하기</a></li>
+                    <li><a href="#">대학 생활을 위한 제품 쇼핑하기</a></li>
                 </ul>
             </div>
         </div>
@@ -157,29 +211,31 @@
                 <input type="checkbox" class="dropdown-menu-check" id="shopping-and-more7">
                 <label for="shopping-and-more7">
                     <h3>Apple의 가치관</h3>
+                    <div class="plus-icon"></div>
                 </label>
                 <ul>
                     
-                    <li>손쉬운 사용</li>
-                    <li>환경</li>
-                    <li>개인정보 보호</li>
-                    <li>협력업체에 대한 책임</li>
+                    <li><a href="#">손쉬운 사용</a></li>
+                    <li><a href="#">환경</a></li>
+                    <li><a href="#">개인정보 보호</a></li>
+                    <li><a href="#">협력업체에 대한 책임</a></li>
                 </ul>
             </div>
             <div class="footer-nav-contents">
                 <input type="checkbox" class="dropdown-menu-check" id="shopping-and-more8">
                 <label for="shopping-and-more8">
                     <h3>Apple 정보</h3>
+                    <div class="plus-icon"></div>
                 </label>
                 <ul>
                     
-                    <li>Newsroom</li>
-                    <li>Apple 리더십</li>
-                    <li>채용 안내</li>
-                    <li>윤리 및 규정 준수</li>
-                    <li>이벤트</li>
-                    <li>일자리 창출</li>
-                    <li>Apple 연락처</li>
+                    <li><a href="#">Newsroom</a></li>
+                    <li><a href="#">Apple 리더십</a></li>
+                    <li><a href="#">채용 안내</a></li>
+                    <li><a href="#">윤리 및 규정 준수</a></li>
+                    <li><a href="#">이벤트</a></li>
+                    <li><a href="#">일자리 창출</a></li>
+                    <li><a href="#">Apple 연락처</a></li>
                 </ul>
             </div>
         </div>
