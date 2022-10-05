@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid-container {
+            display: grid;
+            margin: 0 auto;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 100px);
+            grid-row-gap: 15px;
+            grid-column-gap: 15px;
+            max-width: 600px;
+            grid-template-areas: 
+            "n1 n1 n1 n1"
+            "n5 n6 n6 n8"
+            "n5 n6 n6 n8"
+            "n13 n13 n13 n13";
+        }
+
+        @media screen and (max-width:800px) {
+            .grid-container {
+                grid-template-areas: 
+            "n5 n6 n6 n8"
+            "n5 n6 n6 n8"
+            "n1 n1 n1 n1"
+            "n13 n13 n13 n13"
+;
+            }
+        }
+
+        .grid-container > div {
+            border: 2px solid black;
+        }
+        .n1.a {grid-area: n1;}
+        .n1.b {grid-area: n2;}
+        .n1.c {grid-area: n3;}
+        .n1.d {grid-area: n4;}
+        .n2.a {grid-area: n5;}
+        .n2.b {grid-area: n6;}
+        .n2.c {grid-area: n7;}
+        .n2.d {grid-area: n8;}
+        .n3.a {grid-area: n9;}
+        .n3.b {grid-area: n10}
+        .n3.c {grid-area: n11}
+        .n3.d {grid-area: n12}
+        .n4.a {grid-area: n13}
+        .n4.b {grid-area: n14}
+        .n4.c {grid-area: n15}
+        .n4.d {grid-area: n16;}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="n1 a">1</div>
+        <div class="n2 a">5</div>
+        <div class="n2 b">6</div>
+
+        <div class="n2 d">8</div>
+
+        <!-- <div class="n3 d">12</div> -->
+        <div class="n4 a">13</div>
+
+    </div>
+</body>
+</html>

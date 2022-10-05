@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        nav {
+            display: flex; 
+            max-width: 1000px;
+            margin: 0 auto;
+            justify-content: space-between;
+            font-size: 12px;
+        }
+        .dropdown-menu-check {
+            display: none;
+        }
+        .footer-nav-coulmn {
+            flex-basis: 20%;
+        }
+        
+        nav h3 {
+            margin-bottom: 4px;
+        }
+        nav li {
+            padding : 4px 0;
+        }
+
+
+        @media screen and (max-width:600px) {
+            nav {
+                display: block;
+                padding: 0 16px;
+            }
+            .footer-nav-contents {
+                border-top: 1px solid gray;
+                margin: 8px 0;
+                padding-top: 8px;
+            }
+
+            nav ul {
+                display: none;
+            }
+            .dropdown-menu-check:checked ~ ul {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="footer-nav-coulmn">
+            <div class="footer-nav-contents">
+                <input type="checkbox" class="dropdown-menu-check" id="shopping-and-more1">
+                <label for="shopping-and-more1">
+                    <h3>쇼핑 및 알아보기</h3>
+                </label>
+                <ul>
+                    <li>스토어</li>
+                    <li>Mac</li>
+                    <li>iPad</li>
+                    <li>iPhone</li>
+                    <li>Watch</li>
+                    <li>AirPods</li>
+                    <li>TV 및 홈</li>
+                    <li>AirTag</li>
+                    <li>액세서리</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-nav-coulmn">
+            <div class="footer-nav-contents">
+                <input type="checkbox" class="dropdown-menu-check" id="shopping-and-more2">
+                <label for="shopping-and-more2">
+                    <h3>서비스</h3>
+                </label>
+                <ul>
+                    <li>Apple Music</li>
+                    <li>Apple TV+</li>
+                    <li>Apple Arcade</li>
+                    <li>iCloud</li>
+                    <li>Apple Books</li>
+                    <li>Apple Podcast</li>
+                    <li>App Store</li>
+                </ul>
+            </div>
+            <div class="footer-nav-contents">
+                <input type="checkbox" class="dropdown-menu-check" id="shopping-and-more3">
+                <label for="shopping-and-more3">
+                    <h3>계정</h3>
+                </label>
+                <ul>
+                    <li>Apple ID 관리</li>
+                    <li>Apple Store 계정</li>
+                    <li>iCloud.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-nav-coulmn">
+            <div class="footer-nav-contents">
+                <input type="checkbox" class="dropdown-menu-check" id="shopping-and-more4">
+                <label for="shopping-and-more4">
+                    <h3>Apple Store</h3>
+                </label>
+                <ul>
+                    <li>매장 찾기</li>
+                    <li>Genius Bar</li>
+                    <li>Today at Apple</li>
+                    <li>Apple 캠프</li>
+                    <li>Apple Store 앱</li>
+                    <li>리퍼 및 특가 제품</li>
+                    <li>금융 혜택</li>
+                    <li>Apple Trade In</li>
+                    <li>주문 상태</li>
+                    <li>쇼핑 도움말</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-nav-coulmn">
+            <div class="footer-nav-contents">
+                <input type="checkbox" class="dropdown-menu-check" id="shopping-and-more5">
+                <label for="shopping-and-more5">
+                    <h3>비즈니스</h3>
+                </label>
+                <ul>
+                    
+                    <li>Apple과 비즈니스</li>
+                    <li>비즈니스를 위한 제품 쇼핑하기</li>
+
+                </ul>
+            </div>
+            <div class="footer-nav-contents">
+                <input type="checkbox" class="dropdown-menu-check" id="shopping-and-more6">
+                <label for="shopping-and-more6">
+                    <h3>교육</h3>
+                </label>
+                <ul>
+                    
+                    <li>Apple과 교육</li>
+                    <li>초중고용 제품 쇼핑하기</li>
+                    <li>대학 생활을 위한 제품 쇼핑하기</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-nav-coulmn">
+            <div class="footer-nav-contents">
+                <input type="checkbox" class="dropdown-menu-check" id="shopping-and-more7">
+                <label for="shopping-and-more7">
+                    <h3>Apple의 가치관</h3>
+                </label>
+                <ul>
+                    
+                    <li>손쉬운 사용</li>
+                    <li>환경</li>
+                    <li>개인정보 보호</li>
+                    <li>협력업체에 대한 책임</li>
+                </ul>
+            </div>
+            <div class="footer-nav-contents">
+                <input type="checkbox" class="dropdown-menu-check" id="shopping-and-more8">
+                <label for="shopping-and-more8">
+                    <h3>Apple 정보</h3>
+                </label>
+                <ul>
+                    
+                    <li>Newsroom</li>
+                    <li>Apple 리더십</li>
+                    <li>채용 안내</li>
+                    <li>윤리 및 규정 준수</li>
+                    <li>이벤트</li>
+                    <li>일자리 창출</li>
+                    <li>Apple 연락처</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>
