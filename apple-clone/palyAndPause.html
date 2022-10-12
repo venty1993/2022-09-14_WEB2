@@ -7,9 +7,16 @@
     <title>Document</title>
     <style>
 
-        body {
-            background-color: #232323;
+        .video-container {
+            width: 1024px;
+            margin: 0 auto;
+            position: relative;
         }
+
+        .video-container > video {
+            width: 100%;
+        }
+
         #video-play-state {
             display: none;
         }
@@ -17,7 +24,9 @@
         .video-play-state-area{
             width: 32px;
             height: 32px;
-            position: relative;
+            position: absolute;
+            bottom: 32px;
+            right: 32px;
             box-sizing: border-box;
         }
 
@@ -38,16 +47,16 @@
             width: 16px;
             height: 16px;
             position: absolute;
-            -webkit-mask: url(play.svg);
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
             background-color: #fff;
+            -webkit-mask: url(pause.svg);
             opacity: 0.5;
         }
-
-        #video-play-state:checked + label > .video-play-state-area::after {
-            -webkit-mask: url(pause.svg);
+        
+        #video-play-state:checked ~ label > .video-play-state-area::after {
+            -webkit-mask: url(play.svg);
         }
 
         .video-play-state-area:hover::after {
@@ -61,14 +70,26 @@
         .video-play-state-area:active::after {
             opacity: 0.5;
         }
+
+        #video-play-state:checked + video {
+            /*
+            animation-play-state: paused; 
+            이것은 애니메이션을 정지시키는 속성이다!
+            video에는 적용 X
+            */
+        }
+
     </style>
 </head>
 <body>
-    <input type="checkbox" name="" id="video-play-state">
-    <label for="video-play-state">
-        <div class="video-play-state-area">
-    </label>
 
+    <div class="video-container">
+        <input type="checkbox" name="" id="video-play-state">
+        <video src="large.mp4" autoplay muted></video>
+        <label for="video-play-state">
+            <div class="video-play-state-area">
+            </div>
+        </label>
     </div>
 </body>
 </html>
